@@ -43,6 +43,7 @@ class BooksController < ApplicationController
   def destroy
     book = Book.find(params[:id]) # 既存のデータを削除するためのインスタンス作成
     book.destroy # データをデータベースから削除するためのdestroyメソッド実行
+    flash[:notice] = "Book was successfully destroyed."
     redirect_to '/books' # トップ画面へリダイレクト
   end
 
